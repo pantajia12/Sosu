@@ -1,26 +1,26 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <time.h>
 #include <malloc.h>
 
 int main() {
    int num;
    scanf("%d", &num);
-   
-   int* Sosu_index = (int*)calloc(num, sizeof(int));
+   clock_t start = clock();
+   bool* Sosu_index = (bool*)calloc(num, sizeof(bool));
 
    register int i, j;
-   clock_t start = clock();
+   
       
    for(i=2;i<=num;i++) {
-      if(Sosu_index[i] == 0) {
-         Sosu_index[i] = 1;
+      if(Sosu_index[i] == false) {
+         Sosu_index[i] = true;
          printf("%d ", i);
          
          for(j=i;j<=num;j+=i) {
-            if(j <= num)
-               Sosu_index[j] = 2;
+               Sosu_index[j] = true;
          }
-      }      
+      }       
    }
 
    clock_t end = clock();
