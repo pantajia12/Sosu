@@ -17,7 +17,7 @@ int main() {
          Sosu_index[i] = true;
          printf("%d ", i);
          
-         for(j=i;j<=sqrt(num);j+=i) {
+         for(j=i;j<=num;j+=i) {
             Sosu_index[j] = true;
          }
       }
